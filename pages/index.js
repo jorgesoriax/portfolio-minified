@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Container, VStack, useColorModeValue } from "@chakra-ui/react";
-import {user} from "../src/utils/profile"
+import { user } from "../src/utils/profile";
+import Navbar from "../src/components/Navbar";
 
 export default function Home() {
   return (
@@ -11,7 +12,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Container maxW="3xl" p={0}>
-        Hello world!
+        <VStack px={3}>
+          <Navbar />
+        </VStack>
       </Container>
     </div>
   );
