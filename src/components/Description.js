@@ -39,10 +39,7 @@ export default function Description() {
 
     return (
       <HStack spacing={3}>
-        <InputGroup>
-          <InputLeftElement pointerEvents="none" children={icon} />
-          <Input type={type} value={value} readOnly border={0} />
-        </InputGroup>
+        <Input type={type} value={value} readOnly border={0} pl={0}/>
         <Link href={href} isExternal>
           <Tooltip label={linkLabel} placement="top" closeOnClick={false}>
             <IconButton icon={<AppWindow size={24} weight="fill" />} />
@@ -91,7 +88,7 @@ export default function Description() {
       <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader p={5} pl={6}>
+          <ModalHeader p={5}>
             <HStack justify="space-between" align="stretch">
               <Text fontWeight="medium">Contacto directo</Text>
               <ModalCloseButton position="inherit" />

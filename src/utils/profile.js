@@ -35,15 +35,13 @@ export const links = {
       title: "jorge_soriaw@outlook.com",
       type: "email",
       href: "mailto:jorge_soriaw@outlook.com",
-      linkLabel: "Abrir Correo",
-      icon: <AtSignIcon fontSize={"xl"} />,
+      linkLabel: "Abrir Correo"
     },
     phone: {
       title: "81 1280 2209",
       type: "tel",
       href: "https://wa.me/8112802209",
-      linkLabel: "Abrir WhatsApp",
-      icon: <PhoneIcon />,
+      linkLabel: "Abrir WhatsApp"
     },
   },
 };
