@@ -67,9 +67,9 @@ export default function Navbar() {
             onClick={toggleColorMode}
             icon={
               colorMode == "light" ? (
-                <Moon size={24} weight="fill" />
+                <Moon size={28} />
               ) : (
-                <Sun size={24} weight="fill" />
+                <Sun size={28} />
               )
             }
             aria-label="Toggle darkmode"
