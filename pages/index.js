@@ -17,17 +17,24 @@ export async function getStaticProps() {
 }
 
 export default function Home({ allPostsData }) {
-  const bg = useColorModeValue("white", "gray.800");
-
   return (
     <div>
       <Head>
-        <title>WebDev 22 / {user.name}</title>
+        <title>WebDev 22</title>
         <meta name="description" content="Portafolio de proyectos web" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Container maxW="3xl" p={0}>
-        <VStack maxW="3xl" pos="fixed" bg={bg} px={3}>
+      <Container
+        maxW={{ base: "100%", lg: "3xl" }}
+        p={0}
+        // border="1px solid black"
+      >
+        <VStack
+          maxW={{ base: "100%", lg: "3xl" }}
+          mx={{ base: 6, md: 2 }}
+          // border="1px solid red"
+          spacing={0}
+        >
           <Navbar />
           <Description />
         </VStack>

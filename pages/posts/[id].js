@@ -11,6 +11,7 @@ import {
   Stack,
   Text,
   Tooltip,
+  useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
 import Head from "next/head";
@@ -29,6 +30,8 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Post({ postData }) {
+  const buttonColor = useColorModeValue("gray.600", "white");
+
   return (
     <Container
       maxW={{ base: "100%", lg: "60%" }}
@@ -36,38 +39,67 @@ export default function Post({ postData }) {
       px={{ base: 8, lg: 0 }}
     >
       <Head>
-        <title>{postData.title}</title>
+        <title>WebDev 22 / {postData.title}</title>
       </Head>
       <VStack spacing={6}>
         <VStack spacing={1} w="full" align="left">
-          <HStack spacing={6} align="start" justify="space-between">
+          <Stack
+            spacing={{ base: 8, md: 6 }}
+            align="start"
+            justify="space-between"
+            direction={{ base: "column-reverse", md: "row" }}
+          >
             <Heading>{postData.title}</Heading>
-            <HStack spacing={3}>
+            <HStack
+              spacing={3}
+              w={{ base: "100%", md: "auto" }}
+              justify="right"
+            >
               <NextLink href={postData.repo} passHref>
                 <Link isExternal>
-                  <Tooltip label="Repositorio" placement="top" borderRadius="full" py={1} px={3}>
-                    <IconButton icon={<GithubLogo size={28} />} />
+                  <Tooltip
+                    label="Repositorio"
+                    placement="top"
+                    borderRadius="full"
+                    py={1}
+                    px={3}
+                  >
+                    <IconButton
+                      color={buttonColor}
+                      icon={<GithubLogo size={28} />}
+                    />
                   </Tooltip>
                 </Link>
               </NextLink>
               <NextLink href={postData.website} passHref>
                 <Link isExternal>
-                  <Tooltip label="Website" placement="top" borderRadius="full" py={1} px={3}>
-                    <IconButton icon={<GlobeSimple size={28} />} />
+                  <Tooltip
+                    label="Website"
+                    placement="top"
+                    borderRadius="full"
+                    py={1}
+                    px={3}
+                  >
+                    <IconButton
+                      color={buttonColor}
+                      icon={<GlobeSimple size={28} />}
+                    />
                   </Tooltip>
                 </Link>
               </NextLink>
-              <IconButton
-                as="a"
-                href="/"
-                icon={<CloseIcon />}
-                w="fit-content"
-              />
+              <NextLink href="/" passHref>
+                <Link>
+                  <IconButton
+                    color={buttonColor}
+                    icon={<CloseIcon size={28} />}
+                  />
+                </Link>
+              </NextLink>
             </HStack>
-          </HStack>
-          <HStack spacing={0} justify="space-between">
+          </Stack>
+          <HStack color="gray.500" spacing={0} justify="space-between">
             <Text>{postData.id}</Text>
-            <Text color={"gray.300"}>{postData.date}</Text>
+            <Text>Lanzado el {postData.date}</Text>
           </HStack>
         </VStack>
         <Image

@@ -2,6 +2,7 @@ import {
   Box,
   HStack,
   Link,
+  Stack,
   Text,
   useColorModeValue,
   VStack,
@@ -15,16 +16,12 @@ export default function ProjectList({ items }) {
 
   const Thumbnail = ({ cover, website }) => {
     return (
-      <NextLink
-        href={website}
-        passHref
-      >
+      <NextLink href={website} passHref>
         <Link isExternal>
           <Box
             bg="gray"
-            w={{ base: "200px", md: "250px" }}
-            h="full"
-            p={3}
+            w={{ base: "100%", md: "250px" }}
+            h={{ base: "100px", md: "75px" }}
             borderRadius="md"
             align="center"
             bgImage={cover}
@@ -39,7 +36,13 @@ export default function ProjectList({ items }) {
   };
   const Details = ({ id, date, title, tools }) => {
     return (
-      <VStack w="full" color="gray.500" fontSize="sm">
+      <VStack
+        w="full"
+        color="gray.500"
+        fontSize="sm"
+        spacing={{ base: 4, md: 0 }}
+        justify="space-between"
+      >
         <HStack w="full">
           <VStack align="left" spacing={0}>
             <Text fontWeight="medium" color={color} fontSize="md">
@@ -61,22 +64,27 @@ export default function ProjectList({ items }) {
   };
   const Card = ({ cover, website, ...props }) => {
     return (
-      <HStack
+      <Stack
         w="full"
-        p={3}
-        spacing={6}
+        p={{ base: 2, md: 2 }}
+        spacing={{ base: 4, md: 6 }}
         _hover={{ background: bgHover }}
         align="stretch"
         borderRadius="md"
+        direction={{ base: "column", md: "row" }}
       >
-        <Thumbnail cover={cover} website={website}/>
+        <Thumbnail cover={cover} website={website} />
         <Details {...props} />
-      </HStack>
+      </Stack>
     );
   };
   const ListContainer = ({ children }) => {
     return (
-      <VStack pt="calc(327px + 2.25rem)" mb={{ base: 7, md: 10 }}>
+      <VStack
+        mb={{ base: 6, md: 10 }}
+        mx={{ base: 4, md: 0 }}
+        spacing={{ base: 6, md: 2 }}
+      >
         {children}
       </VStack>
     );

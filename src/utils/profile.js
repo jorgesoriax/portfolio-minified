@@ -1,12 +1,12 @@
-import { AtSignIcon, PhoneIcon } from "@chakra-ui/icons";
-
 export const user = {
   name: "Jorge Soria",
   age: "22",
-  description: "\
-    Desarrollador y diseñador web frontend autodidacta desde hace 3 años,\
-    con proyectos construidos sobre la trinidad web (HTML, CSS, JS) / \
-    Sass / ReactJS, NextJS / Tailwind y ChakraUI.\
+  description:
+    "\
+    Desarrollador y diseñador web autodidacta con 3 años de experiencia\
+    me he especializado en el frontend\
+    construyendo proyectos sobre lenguajes nativos (HTML, CSS, JS), con el preprocesador Sass, \
+    frameworks como ReactJS, NextJS, además de librerías como Tailwind y ChakraUI.\
   ",
   picture: "https://avatars.githubusercontent.com/u/89946966?v=4",
 };
@@ -35,13 +35,13 @@ export const links = {
       title: "jorge_soriaw@outlook.com",
       type: "email",
       href: "mailto:jorge_soriaw@outlook.com",
-      linkLabel: "Abrir Correo"
+      linkLabel: "Abrir Correo",
     },
     phone: {
       title: "81 1280 2209",
       type: "tel",
       href: "https://wa.me/8112802209",
-      linkLabel: "Abrir WhatsApp"
+      linkLabel: "Abrir WhatsApp",
     },
   },
 };

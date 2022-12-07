@@ -11,7 +11,7 @@ import {
   Link,
   Highlight,
 } from "@chakra-ui/react";
-import { List, Moon, Sun, X } from "phosphor-react";
+import { List, Moon, SunDim, X } from "phosphor-react";
 import NextLink from "next/link";
 import Image from "next/image";
 import { user } from "../utils/profile.js";
@@ -21,6 +21,7 @@ export default function Navbar() {
   const toggle = () => setIsOpen(!isOpen);
   const { colorMode, toggleColorMode } = useColorMode();
   const borderBottomNavBar = useColorModeValue("gray.300", "gray.700");
+  const buttonColor = useColorModeValue("gray.600", "white");
   const links = [{ title: "Blog (próximamente)", href: "/" }];
 
   const MenuToggle = ({ toggle, isOpen }) => {
@@ -66,13 +67,10 @@ export default function Navbar() {
           <IconButton
             onClick={toggleColorMode}
             icon={
-              colorMode == "light" ? (
-                <Moon size={28} />
-              ) : (
-                <Sun size={28} />
-              )
+              colorMode == "light" ? <Moon size={28} /> : <SunDim size={28} />
             }
             aria-label="Toggle darkmode"
+            color={buttonColor}
           />
         </Stack>
       </Box>
@@ -94,17 +92,8 @@ export default function Navbar() {
             alt="User picture"
           />
         </Box>
-        <Text fontSize="sm" fontWeight="medium">
-          <Highlight
-            query="/"
-            styles={{
-              color: "gray.500",
-              fontWeight: "normal",
-            }}
-          >
-            / &nbsp;
-          </Highlight>
-          {user.name}, {user.age} años
+        <Text color="gray.500">
+          / &nbsp; {user.name}, {user.age} años
         </Text>
       </HStack>
     );
@@ -117,10 +106,11 @@ export default function Navbar() {
         justify="space-between"
         wrap="wrap"
         w="100%"
-        px={{ base: 7, md: 0 }}
-        py={{ base: 7, md: 10 }}
+        px={0}
+        py={{ base: 6, md: 10 }}
         borderBottom={{ base: isOpen ? "1px" : 0, md: 0 }}
         borderColor={borderBottomNavBar}
+        // border="1px solid blue"
       >
         {children}
       </Flex>
