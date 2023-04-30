@@ -1,10 +1,11 @@
 ---
-title: 'Catálogo de stock'
+title: 'Vercel submenú'
 date: '2020-01-02'
 tools: 'Laravel / PhpMyAdmin / Sass'
 repo: 'https://github.com/jorgesoriax/portfolio-minified'
-website: 'https://webdev1022.vercel.app/'
-cover: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1528&q=80'
+website: 'https://vercel-submenu-animated-tabs.vercel.app/'
+thumbnail: '/static/projects/02-vercel-submenu/vercel-submenu-thumbnail.jpg'
+cover: '/static/projects/02-vercel-submenu/vercel-submenu-cover.jpg'
 ---
 
 Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.

@@ -14,7 +14,7 @@ export default function ProjectList({ items }) {
   const bgHover = useColorModeValue("gray.100", "blackAlpha.200");
   const color = useColorModeValue("gray.700", "white");
 
-  const Thumbnail = ({ cover, website }) => {
+  const Thumbnail = ({ thumbnail, website }) => {
     return (
       <NextLink href={website} passHref>
         <Link isExternal>
@@ -24,7 +24,7 @@ export default function ProjectList({ items }) {
             h={{ base: "100px", md: "75px" }}
             borderRadius="md"
             align="center"
-            bgImage={cover}
+            bgImage={thumbnail}
             bgSize="cover"
             bgPosition="center"
             bgRepeat="no-repeat"
@@ -62,7 +62,7 @@ export default function ProjectList({ items }) {
       </VStack>
     );
   };
-  const Card = ({ cover, website, ...props }) => {
+  const Card = ({ thumbnail, cover, website, ...props }) => {
     return (
       <Stack
         w="full"
@@ -73,7 +73,7 @@ export default function ProjectList({ items }) {
         borderRadius="md"
         direction={{ base: "column", md: "row" }}
       >
-        <Thumbnail cover={cover} website={website} />
+        <Thumbnail thumbnail={thumbnail} cover={cover} website={website} />
         <Details {...props} />
       </Stack>
     );

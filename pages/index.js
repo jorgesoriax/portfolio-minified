@@ -6,6 +6,9 @@ import Description from "../src/components/Description";
 import ProjectList from "../src/components/ProjectsList";
 import { getSortedPostsData } from "../src/lib/posts";
 
+import "@fontsource/open-sans"
+import "@fontsource/inter"
+
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
 
@@ -20,14 +23,13 @@ export default function Home({ allPostsData }) {
   return (
     <div>
       <Head>
-        <title>WebDev 22</title>
+        <title>WebDev | Portafolio 2023</title>
         <meta name="description" content="Portafolio de proyectos web" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Container
         maxW={{ base: "100%", lg: "3xl" }}
         p={0}
-        // border="1px solid black"
       >
         <VStack
           maxW={{ base: "100%", lg: "3xl" }}

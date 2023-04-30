@@ -1,10 +1,11 @@
 ---
-title: 'When to Use Static Generation v.s. Server-side Rendering'
+title: 'dsyner'
 date: '2020-01-02'
 tools: 'Pendiente'
 repo: 'https://github.com/jorgesoriax/design-app'
-website: 'https://design-app-blond.vercel.app/'
-cover: 'https://images.unsplash.com/photo-1556139902-7367723b7e9e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
+website: 'https://sucinto.vercel.app/'
+thumbnail: '/static/projects/05-dsyner/dsyner-thumbnail.jpg'
+cover: '/static/projects/05-dsyner/dsyner-cover.jpg'
 ---
 
 We recommend using **Static Generation** (with and without data) whenever possible because your page can be built once and served by CDN, which makes it much faster than having a server render the page on every request.
